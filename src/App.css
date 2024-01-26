@@ -27,12 +27,30 @@
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar{
+  background-color:hsl(200, 50%, 70%)!important;
+}
+.d-flex{ 
+  .form-control:focus {
+    border-color: hsl(200, 50%, 50%);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px hsl(200, 50%, 30%);}
   }
-  to {
-    transform: rotate(360deg);
-  }
+#exampleFormControlTextarea1{
+  border:1.5px solid hsl(200,50%,50%);
+}
+#exampleFormControlTextarea1:focus{
+  border-color: hsl(200, 50%, 50%);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px hsl(200, 50%, 30%);
+}
+.container{
+  text-align: center; 
+}
+.box{
+  width:100%;
+  height:240px;
+  border: 2px solid hsl(200, 50%, 50%);
+  overflow-y: auto;
+}
+hr{
+  border:2px solid rgb(2, 92, 166);
 }

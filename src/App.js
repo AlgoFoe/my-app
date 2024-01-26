@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import TextForm from "./components/TextForm";
+import { useState } from "react";
 function App() {
+  const [myStyle, setMyStyle] = useState({
+    color:"white",
+    backgroundColor:"rgb(165, 74, 74)",
+    btnText:"Light"
+  });
+  const toggleStyle=()=>{
+      if(myStyle.color==="white"){
+        setMyStyle({
+          color:"black",
+          backgroundColor:"bisque",
+          btnText:"Dark",
+        })
+      }
+      else{
+        setMyStyle({
+          color:"white",
+          backgroundColor:"rgb(165, 74, 74)",
+          btnText:"Light"
+      })
+      }
+    }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={myStyle}>
+        <Navbar name="TextUtility" links="Link" toggle={toggleStyle} myStyle={myStyle}/>
+        <TextForm head="Text Input" myStyle={myStyle}/>
+      </div>
+    </>
   );
 }
 
